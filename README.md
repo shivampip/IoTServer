@@ -49,3 +49,22 @@ ln.upload("key", filepath)
 download_path= "folder"
 file= ln.download("key", download_path)
 ```
+
+* Store JSON
+```
+ln.savej("key", obj)
+```
+
+* Get JSON
+```
+jobj= ln.getj("key")
+```
+
+* Create Record
+```
+rec= ln.get_record("temperature")  #Create or Get record
+rec.add(34)
+rec.add(65)
+rec.add(565)
+rec.add(98)
+```
