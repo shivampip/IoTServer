@@ -18,9 +18,15 @@ Flask based IoT Server
 
 ```
 import littlenet as ln
+ln.init("localhost", port=1200)
 ```
 
-* Store Data
+* Store Data (single)
+```
+ln.save("key", "value")
+```
+
+* Store Data (multiple)
 ```
 ln.store("key", "value")
 ln.store("key2", "value2")
@@ -29,7 +35,7 @@ ln.commit()
 
 * Get Data
 ```
-value= ln.get("key")
+value= ln.get("key", default= null)
 ```
 
 * Upload File
@@ -40,5 +46,6 @@ ln.upload("key", filepath)
 
 * Download File
 ```
-file= ln.download("key")
+download_path= "folder"
+file= ln.download("key", download_path)
 ```
